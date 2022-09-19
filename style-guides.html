@@ -1,0 +1,109 @@
+<html>
+    <html lang="en">
+        <head>
+        <meta charset="utf-8">
+        <title>A List Apart</title>
+        <link rel="stylesheet" href="styles.css">
+        </head>
+        
+        <body>
+            <header>
+                <div class="header-box-2">
+                
+                    <h1>A List Apart</h1>
+                </div>
+                <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="style-guides.html"><span class="gray-color">Creating Style Guides</span></a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Write For Us</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <article>
+                    <section class="main-section">
+                <h2>Creating Style Guides</h2>
+                <adress> by <a rel="author" href="https://suzenrobertson.net/style-guides-2" target="_blank">Susan Robertson</a></adress> · <time datetime="04/08/2014">April 08, 2014</time>
+                <p>Several years ago, I was working on a large, complex application. It was a bit of a legacy project: many different designers and front-end developers had come and gone, each appending a new portion to the sprawling application. By the time I arrived, the CSS was huge, the styles were varied, and it took a lot of effort to find out if anything was reusable.</p>
+                    </section>
+                    <section class="what-is-section">
+                        <p>During all this, I discovered style guides—a way to control markup and CSS so neither veered out of control or ballooned. In jobs since, I’ve seen firsthand how style guides save development time, make communication regarding your front end smoother, and keep both code and design consistent throughout the site. It has been a revelation, and in this article, I want to show you how to build and maintain them, too.
+                        </p>
+                        <h3>What is a style guide?</h3>
+                        <p>To me, a style guide is a living document of code, which details all the various elements and coded modules of your site or application. Beyond its use in consolidating the front-end code, it also documents the visual language, such as header styles and color palettes, used to create the site. This way, it’s a one-stop place for the entire team—from product owners and producers to designers and developers—to reference when discussing site changes and iterations.</p> <p>Several companies have even put their guides online; Starbucks is the most well known of the bunch, but others exist.</p>
+                        <p>(I should also mention that what I call a style guide, some people call a pattern library. Many of the guides I reference use the term style guide, but pattern library is gaining in popularity.)</p>
+                        <p>When I started working at Editorially, one of the first things I did was tackle the style guide. Creating the guide was probably the most useful thing I’ve ever done when settling into a new job: it forced me to go through and read it, digest it, understand how it was used, and then document it for my own, and the team’s, future reference. In addition to catching inconsistencies and errors by poring through the CSS, if I didn’t understand how certain pieces of code were being used, I annotated the guide with questions (which my teammates graciously answered).</p>
+                    </section>
+                    <section class="why-should-section">
+                        <h3>Why should I use a style guide?</h3>
+                        <p>As your team grows and changes over time, your style guide will help you in several ways.</p>
+                        <ol>
+                            <li><strong>First</strong>, creating your guide will take some time up front, but I’ve found that this pays off with faster build times for new sections and pages, because anyone joining an ongoing project can refer to the guide for the exact styles to use.</li>
+                            <li><strong>Second</strong>, a guide allows us to standardize the CSS, keeping it small and quick to load.</li>
+                            <ul>
+                                <li>By <strong>using the guide as an inventory</strong> of modules and code, both designers and developers can quickly see if new designs deviate from established standards, and decide as a team if it’s worth expanding the codebase or if something already written is easily extended.</li>
+                                <li>When you have no guide, this is impossible, which in my experience usually means that new styles are written—resulting in bloated CSS.</li>
+                            </ul>
+                            <li><strong>Third</strong>, design consistency is easier to maintain, as the designer can look in one place to reference the site’s components and ensure a cohesive look and feel throughout.</li>
+                            <ul>
+                                <li>This is especially helpful on <strong>larger teams</strong> and at enterprise-level companies where you may have an entire team of designers working on the site.</li>
+                                <li>And when <strong>design consistency</strong> is maintained, the codebase is also kept smaller.</li>
+                            </ul>
+                            <li><strong>Fourth</strong>, communication becomes clearer as well. When I built out pages in a large-scale project and passed them off to the designer, she used the language of the various classes in the guide to ask for changes.</li>
+                            <ul>
+                                <li>This meant that we didn’t have any confusion on either of our parts as we sped through <strong>revisions</strong>.</li>
+                                <li>It also gave the entire team a <strong>shared vocabulary</strong>, like the names of modules, to use in talking about the designs once they were coded.</li>
+                            </ul>
+                        </ol>
+                        <p><strong>The final benefit</strong> I’ve found is that you can use your guide to do a quick QA pass. The guide may not be identical to the pages you eventually build out, but it can point out issues you may have in various browsers. By tackling these early on, you’ll avoid them in later testing.
+                        </p>
+                    </section>
+                    <section class="steps-section">
+                        <h3>Steps to build out your guide</h3>
+                        <p>Below, I’ll take you through starting your own guide, based on my first few weeks at Editorially. (Because when I work on a project without a guide, I’m soon jonesing to make one—just ask my colleagues).</p>
+                        
+                        <figure>
+                            <img title="Illustration of somebody changing clothes in a warddrobe" src="images/using-the-guide.png">
+                        </figure>
+                        
+                        <dl>
+                            <dt><strong>Assemble your site's basics</strong></dt>
+                            <dd>Start your guide with some of your site’s foundations. A foundational element may include the color palette, your grid layout system, or the basic type styles for headers and body text: whatever you feel are the very basic elements to create a page. For Editorially, the most foundational part of our site was the color guide, so I began with that and went from there. I created an HTML document with the markup, linking to the application CSS, so any CSS changes would be automatically reflected in the style guide.When you look at the style guide created by Yelp, you can see how it starts with the basics: typography, grid, and colors, adding more patterns as it goes along.</dd>
+                            <dt><strong>Add in more patterns</strong></dt>
+                            <dd>A pattern is any self-contained set of markup and styles to make some of your site’s basic objects, like a call-out box used repeatedly, buttons, or the way you lay out a list of links horizontally. At Editorially I documented all the variations possible of button and link styles. So go ahead and add the exact markup you need for each element to your guide. For example, for a button in the Editorially guide, I simply put <code>label for="btn" class="btn" href="#".btn input type="submit" name="btn" value=".btn" </code>. And because we link to the same CSS as the application does, the CSS shows correctly in the style guide. Should we change the .btn style, the style guide would change as well. Keep going through your site and add in patterns as you see them; you may use particular layouts over and over, or a media-object pattern, or a vertical list pattern. Below is an another example from South Tees Hospital, showing some of their patterns for what they call feature blocks. Look for similar things on your own site to document in your guide.</dd>
+                            <dt><strong>Document interactivity</strong></dt>
+                            <dd>If possible, add the bits of interactivity that your site uses, such as dropdowns, modals, or tooltips, which are small hovers with helpful text that gives the user more information. This lets your team see not just the static versions of these things, but the animations as well. So when you’re looking at the guide and hover over or click on items, they’ll actually act as they would on your site.</dd>
+                            <dt><strong>Make maintenance easy</strong></dt>
+                            <dd>If you have to do extra work to update your style guide when making changes to your look and feel, the likelihood of it staying up to date is pretty slim. I’ve said it a few times now, but that’s why we linked the Editorially guide to the same CSS as the application—that way, we didn’t have to manually update the guide ourselves. It can be difficult to make updating the guide a priority, but maintenance is critical. Depending on how quickly you iterate on your site or application, you should check up on the guide as a regular task, whether it’s weekly or monthly. When you’re making changes to your site, update your style guide as part of the workflow.</dd>
+                            <dt><strong>Iterate your guide</strong></dt>
+                            <dd>Once you have the bulk of your site’s or application’s components listed in your guide, you’ve got a wealth of tools to make it even more handy. As I built out the style guide for Editorially, a colleague pointed out the fantastic tool by Filament Group, <a href="https://github.com/filamentgroup/X-rayHTML" target="_blank"> X-rayHTML </a>, which is a small JavaScript library to help you build out documentation. X-rayHTML takes the styled objects on your page and generates a nicely formatted code block below them, without any further code from you. You can also add <a href="https://prismjs.com/" target="_blank"> prism.js </a> for syntax highlighting, which color-codes the code for greater readability.</dd>
+                        </dl>
+                    </section>
+                    <section class="using-section">
+                        <h3>Using the guide</h3>
+                        <figure>
+                            <img title="Yelp" src="images/yelp.png">
+                        </figure>
+                        <p>Phew. You’ve done all this work and you’ve created this guide, so now what? How do you get people to use it? The first step is to talk about it. If a new team member comes on board, introduce her to the guide as a way of orienting her with the site, since the guide encompasses so much of both the visual and code languages of your front end.</p>
+                        <p>As long as you’re iterating on a site or application, your style guide will never truly be finished. But having something documented early on, and showing it to teammates and getting their feedback, is a huge help. Involving the whole team in building the guide also makes it feel more like the team’s guide—and gets everyone invested in maintaining and using it on a regular basis.</p>
+                        <p>We’ve made the Editorially guide available as both a public repo on <a href="https://www.github.com/
+                            " target="_blank">GitHub</a> and online. This was very much a work in progress and an internal team document, so we’ve also got notes, patterns, and a lot of messiness. But the reason for showing it is to reinforce the fact that a style guide doesn’t have to look perfect to be useful. Despite the mess, all of this was incredibly helpful for me and other team members as we continued to work on the application.</p>
+                        <p>So, are you convinced? Are you wishing you had a style guide for your site or application? It will be well worth the effort: make the time, get your team on board, start the build—and be rewarded with a document that speeds up the discussion and development of your site.</p>
+                    </section>
+                </article>
+            </main>
+            <footer>
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Authors</a></li>
+                    <li><a href="#">Masthead</a></li>
+                    <li><a href="#">Style Guide</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Sponsorships</a></li>
+                    </ul>
+            </footer>
+        </body>
+    </html>
